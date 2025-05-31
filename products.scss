@@ -1,0 +1,59 @@
+@use 'sass:color';
+@use 'variables';
+
+.products {
+  margin-top: variables.$sp-lg;
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    calc(100% / 3 - variables.$product-gap)
+  );
+  grid-gap: variables.$product-gap;
+  width: 100%;
+
+  .product-item {
+    background-color: variables.$color-white;
+    padding: variables.$sp-sm;
+    border-radius: variables.$radius-md;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    img {
+      border-radius: variables.$radius-md;
+      margin-bottom: variables.$sp-sm;
+      width: 100%;
+      height: auto;
+    }
+
+    h4 {
+      font-size: 1.125rem; // ~18px
+      margin-bottom: variables.$sp-xs;
+      color: variables.$color-primary;
+    }
+
+    p {
+      font-size: 0.875rem; // ~14px
+      color: color.adjust(variables.$color-text, $lightness: -10%);
+      margin-bottom: variables.$sp-sm;
+      flex-grow: 1;
+    }
+
+    .product-button {
+      display: block;
+      background-color: variables.$color-secondary;
+      color: variables.$color-white;
+      text-align: center;
+      padding: variables.$sp-xs 0;
+      border-radius: variables.$radius-sm;
+      font-weight: bold;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: color.adjust(variables.$color-secondary, $lightness: 10%);
+      }
+    }
+  }
+}

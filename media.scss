@@ -1,0 +1,40 @@
+@use 'variables';
+
+@media screen and (max-width: variables.$bp-desktop) {
+  .container {
+    max-width: 80%;
+  }
+
+  .products {
+    grid-template-columns: repeat(
+      2,
+      calc(100% / 2 - variables.$product-gap)
+    );
+    grid-gap: variables.$sp-md;
+  }
+}
+
+@media screen and (max-width: variables.$bp-tablet) {
+  .products {
+    display: block;
+
+    .product-item {
+      margin-bottom: variables.$sp-lg;
+      width: 100%;
+    }
+  }
+
+  .sobre-loja {
+    flex-direction: column;
+
+    .imagem-loja,
+    .descricao-loja {
+      width: 100%;
+    }
+
+    .imagem-loja img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

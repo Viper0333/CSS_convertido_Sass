@@ -1,0 +1,48 @@
+@use 'sass:color';
+@use 'variables';
+
+header {
+    background-color: variables.$color-primary;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: variables.$sp-sm;
+        padding-bottom: variables.$sp-sm;
+    }
+
+    .branding h1 {
+        color: variables.$color-white;
+
+    }
+
+    .branding img {
+        max-width: 120px;
+        height: auto;
+    }
+
+    nav {
+        ul.menu {
+        display: flex;
+        gap: variables.$sp-lg;
+
+        li {
+            a {
+            color: variables.$color-white;
+            font-weight: bold;
+            font-size: 1.125rem; // ~18px
+            transition: color 0.3s;
+
+            &:hover {
+                color: color.adjust(variables.$color-white, $lightness: 20%);
+            }
+            }
+        }
+        }
+    }
+    }

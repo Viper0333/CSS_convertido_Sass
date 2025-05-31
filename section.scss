@@ -1,0 +1,14 @@
+@use 'variables';
+
+section {
+    padding-top: variables.$sp-xl;
+    padding-bottom: variables.$sp-xl;
+
+    h2 {
+        font-size: 2rem; // ~32px
+        margin-bottom: variables.$sp-lg;
+        color: variables.$color-primary;
+        border-bottom: 3px solid variables.$color-primary;
+        padding-bottom: variables.$sp-xxs;
+    }
+}
